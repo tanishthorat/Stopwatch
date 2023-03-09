@@ -2,6 +2,7 @@
     const startBtn = document.getElementById('btnstart');
     const stopBtn = document.getElementById('btnstop');
     const resetBtn = document.getElementById('btnreset');
+    const circle  = document.getElementById('circle');
 
     let startTime;
     let elapsedTime = 0;
@@ -13,7 +14,7 @@
       let seconds = Math.floor((time % (60 * 1000)) / 1000);
       let milliseconds = Math.floor(time % 1000);
 
-      return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}.${milliseconds.toString().padStart(3, '0')}`;
+      return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}:${milliseconds.toString().padStart(3, '0')}`;
     }
 
     function startTimer() {
@@ -24,6 +25,8 @@
       }, 10);
       startBtn.classList.add("active");
       stopBtn.classList.remove("stopActive");
+      circle.classList.remove("opacity");
+      circle.style.background="linear-gradient(54deg, #00bbff 47.10000000000002px, transparent 252.10000000000002px)";
       startBtn.disabled = true;
       stopBtn.disabled = false;
     }
@@ -32,6 +35,7 @@
       clearInterval(timerInterval);
       startBtn.classList.remove("active");
       stopBtn.classList.add("stopActive");
+      circle.style.background="#00bbff";
       startBtn.disabled = false;
       stopBtn.disabled = true;
     }
@@ -42,6 +46,7 @@
       display.textContent = formatTime(elapsedTime);
       startBtn.classList.remove("active");
       stopBtn.classList.remove("stopActive");
+      circle.classList.add("opacity");
       startBtn.disabled = false;
       stopBtn.disabled = true;
     }
