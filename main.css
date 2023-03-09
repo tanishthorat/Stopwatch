@@ -14,13 +14,17 @@ body{
 }
 #display{
     z-index: 1;
-    color: aliceblue;
-    font-size: 30px;
+    color: rgb(255, 254, 240);
+    font-size: 25px;
     margin-bottom: 60px;
     position: relative;
-    left: 5px;
+    left: 3px;
+    top: 10px;
     /* background-color: #1b305e;
     width: 50%; */
+    font-family: 'Segment7Standard';
+    font-weight: normal;
+    font-style: italic;
 }
 .wrapper{
     position: absolute;
@@ -52,16 +56,15 @@ body{
     animation-duration: 3s;
     animation-iteration-count: infinite;
 }
-
+/* Rotating bar */
 .circle{
-    content: "";
     z-index: -91;
     color: aliceblue;
     font-size: 30px;
     margin-bottom: 120px;
     position: relative;
-    left: 21px;
-    top: 82px;
+    left: 20px;
+    top: 92px;
     height: 300px;
     width: 300px;
     /* border: dashed 39px #00bbff; */
@@ -72,9 +75,8 @@ body{
     margin-top: -320px;
     border-radius: 50%;
     padding: 0 10px;
-    /* height: 136px; */
-    /* width: 241px; */
-    transform: rotate(25deg);
+    /* transform: rotate(25deg); */
+    animation: all;
     animation-name: rot;
     animation-duration: 2s;
     animation-timing-function: linear;
@@ -82,6 +84,33 @@ body{
 }
 
 
+.opacity{
+    opacity: 0.0;
+}
+
+/* keyframes for glow animation */
+
+@keyframes shine {
+    0%,100%{
+        box-shadow: 0px 0px 32px -12px rgb(255 236 129);
+    }
+    50%{
+        box-shadow: 0px 0px 32px 5px rgb(255 232 129);
+    }
+}
+
+/* rotation keyframes */
+
+@keyframes rot{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+
+/* Buttons */
 
 button{
     background-color: #00012f40;
@@ -95,36 +124,14 @@ button{
     
 }
 
+/* Button clicked */
+
 .btn-container button.active,
 .btn-container button.stopActive{
   pointer-events: none;
   opacity: 0.6;
   background-color:rgb(85 118 187);
 }
-
-/* rotation */
-
-@keyframes rot{
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(360deg);
-    }
-}
-
-
-/* keyframes for glow animation */
-
-@keyframes shine {
-    0%,100%{
-        box-shadow: 0px 0px 32px -12px rgb(255 236 129);
-    }
-    50%{
-        box-shadow: 0px 0px 32px 5px rgb(255 232 129);
-    }
-}
-
 
 
 /* riiple  animation*/
@@ -174,8 +181,16 @@ button{
     margin-top: 80px;
 }
 
+footer{
+    background-color: #324672;
+    color: aliceblue;
+    padding: 20px;
+    user-select: none;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
 
-  
 
 
-  
