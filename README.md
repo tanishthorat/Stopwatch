@@ -28,7 +28,7 @@ To use the stopwatch, open the index.html file in your browser. The stopwatch sh
 
 ## Screenshots
 
-![App Screenshot](https://github.com/Tanish02/Stopwatch/blob/main/Screenshot%202023-03-08%20153641.jpg?raw=true)
+![App Screenshot](https://github.com/Tanishthorat/Stopwatch/blob/main/Screenshot%202023-03-08%20153641.jpg?raw=true)
 
 
 ## Tech Stack
